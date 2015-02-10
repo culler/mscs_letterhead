@@ -483,7 +483,7 @@
 %    initialized in one of the \file{size1x.clo} files.
 %    \begin{macrocode}
 \setlength\headheight{12\p@}
-\setlength\headsep   {45\p@}
+\setlength\headsep   {15\p@}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -557,7 +557,7 @@
   \setlength\oddsidemargin{1.625in}
   \setlength\evensidemargin  {\oddsidemargin}
   \setlength\marginparwidth  {90\p@}
-  \addtolength\textheight{102pt}
+  \addtolength\textheight{132pt}
 \fi
 %    \end{macrocode}
 % \end{macro}
@@ -732,22 +732,27 @@
 % \end{macro}
 %
 % \begin{macro}{\ps@firstpage}
-%    The page style \pstyle{firstpage} puts the telephone number
+%    The page style \pstyle{firstpage} puts the contact info
 %    in the proper place for the letterhead. It should be adapted
 %    to site conventions. The size of the number is determined
 %    depending on the main size.
-% \changes{MC}{2009/02/03}{Changed to agree with MSCS footer.}
+% \changes{MC}{2015/02/10}{Changed to agree with logo specs.}
 %    \begin{macrocode}
 \def\ps@firstpage{%
      \let\@oddhead\@empty
-     \def\@oddfoot{\raisebox{-45\p@}[\z@]{%
-\hss\hb@xt@\textwidth{%\hspace*{100\p@}%
-\color{UICred}\headfootfont\urlstyle{same}
-\hfill 
-Phone \telephonenum\quad$\cdot$\quad
-Fax (312) 996-1491\quad $\cdot$\quad
-\homepageurl
-\hfill}\hss}}
+     \def\@oddfoot{\raisebox{-72\p@}[\z@]{%
+\hss\hb@xt@\textwidth{
+\color{UICred}\urlstyle{same}\small
+\vbox to 1.125in{
+\vss
+Department of Mathematics, Statistics, and Computer Science\hfill\break
+851 S. Morgan St. M/C 249\hfill\break
+Chicago, IL 60607-7045\hfill\break
+\url{http://www.math.uic.edu}\hfill\break
+\vss
+}
+\hss}}
+}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -911,6 +916,7 @@ Fax (312) 996-1491\quad $\cdot$\quad
 %    \begin{macrocode}
 \newenvironment{letter}[1]
   {\newpage
+   \printlogo
     \if@twoside \ifodd\c@page
                 \else\thispagestyle{empty}\null\newpage\fi
     \fi
@@ -1067,12 +1073,12 @@ Fax (312) 996-1491\quad $\cdot$\quad
 %     declaration--null if none.
 %    \end{itemize}
 %    \begin{macrocode}
-\font \headfootfont ptmr at 9.5pt
+%%%%%\font \headfootfont phv
 \definecolor{UICred}{rgb}{1.0,0.0,0.0}
 \newcommand*{\opening}[1]{\ifx\@empty\fromaddress
   \renewcommand\arraystretch{.8}%
   \thispagestyle{firstpage}%
-    {\vskip -36pt\raggedright\@date\par\vskip 36pt minus 20pt}%
+    {\vskip -27pt\raggedright\@date\par\vskip 27pt minus 15pt}%
   \else  % home address
     \thispagestyle{empty}%
 %    \end{macrocode}
@@ -1963,10 +1969,12 @@ Chicago, Illinois 60607-7045}
 \def\@texttop{\ifnum\c@page=1\vskip 0\p@ plus .00006fil\relax\fi}
 \setlength{\TPHorizModule}{2.625in}
 \setlength{\TPVertModule}{0.625in}
-\textblockorigin{0pt}{0pt}
-\begin{textblock}{1}(0,1)
-\pgfimage[width=2.5in]{logoleft}
-\end{textblock}
+\newcommand{\printlogo}{
+ \textblockorigin{0pt}{0pt}
+ \begin{textblock}{1}(0,1)
+ \pgfimage[width=2.5in]{logoleft}
+ \end{textblock}
+}
 %    \end{macrocode}
 % \end{macro}
 %
