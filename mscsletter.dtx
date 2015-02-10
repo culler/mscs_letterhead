@@ -741,14 +741,17 @@
 \def\ps@firstpage{%
      \let\@oddhead\@empty
      \def\@oddfoot{\raisebox{-72\p@}[\z@]{%
-\hss\hb@xt@\textwidth{
-\color{UICred}\urlstyle{same}\small
+\hskip -9pt\hb@xt@\textwidth{
+\color{UICred}\urlstyle{same}\bfseries\tiny
 \vbox to 1.125in{
 \vss
-Department of Mathematics, Statistics, and Computer Science\hfill\break
-851 S. Morgan St. M/C 249\hfill\break
-Chicago, IL 60607-7045\hfill\break
-\url{http://www.math.uic.edu}\hfill\break
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{p{1.25in} p{1.25in}l}
+Department of Mathematics, & 322 SEO Building & 312\ 996\ 3041\  p\\
+Statistics, and Computer Science & 851 S. Morgan St M/C 249 & 312\ 996\ 1491\ f\\ 
+The University of Illinois & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
+At Chicago &&\\
+\end{tabular}
 \vss
 }
 \hss}}
@@ -1074,7 +1077,7 @@ Chicago, IL 60607-7045\hfill\break
 %    \end{itemize}
 %    \begin{macrocode}
 %%%%%\font \headfootfont phv
-\definecolor{UICred}{rgb}{1.0,0.0,0.0}
+\definecolor{UICred}{rgb}{0.94,0.2,0.25}
 \newcommand*{\opening}[1]{\ifx\@empty\fromaddress
   \renewcommand\arraystretch{.8}%
   \thispagestyle{firstpage}%
