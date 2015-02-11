@@ -742,15 +742,15 @@
      \let\@oddhead\@empty
      \def\@oddfoot{\raisebox{-72\p@}[\z@]{%
 \hskip -9pt\hb@xt@\textwidth{
-\color{UICred}\urlstyle{same}\bfseries\tiny
+\color{UICred}\urlstyle{same}\bfseries\fontsize{8pt}{8.2pt}\selectfont
 \vbox to 1.125in{
 \vss
 \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{p{1.25in} p{1.25in}l}
+\begin{tabular}{p{1.75in} p{1.375in}l}
 Department of Mathematics, & 322 SEO Building & 312\ 996\ 3041\  p\\
-Statistics, and Computer Science & 851 S. Morgan St M/C 249 & 312\ 996\ 1491\ f\\ 
-The University of Illinois & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
-At Chicago &&\\
+Statistics, and Computer Science & 851 S. Morgan St MC 249 & 312\ 996\ 1491\ f\\ 
+The University & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
+of Illinois at Chicago &&\\
 \end{tabular}
 \vss
 }
@@ -1963,13 +1963,13 @@ Chicago, Illinois 60607-7045}
 %
 % \begin{macro}{\@texttop}
 %    The document class mscsletter sets |\@texttop| to |\vskip| 0pt
-%    \texttt{plus} .00006fil on the first page of a letter, which
+%    \texttt{plus} .0001fil on the first page of a letter, which
 %    centers a short letter on the page. This fil value may have to be
 %    changed for other letterheads.  This setting has to be done after
 %    |\raggedbottom| is executed, since the latter sets |\@texttop| to
 %    |\relax|.
 %    \begin{macrocode}
-\def\@texttop{\ifnum\c@page=1\vskip 0\p@ plus .00006fil\relax\fi}
+\def\@texttop{\ifnum\c@page=1\vskip 0\p@ plus .0001fil\relax\fi}
 \setlength{\TPHorizModule}{2.625in}
 \setlength{\TPVertModule}{0.625in}
 \newcommand{\printlogo}{
@@ -1981,9 +1981,10 @@ Chicago, Illinois 60607-7045}
 %    \end{macrocode}
 % \end{macro}
 %
-%    We always start in one column mode.
+%    We always start in one column mode, and default to ragged right.
 %    \begin{macrocode}
 \onecolumn
+\raggedright
 %</mscsletter>
 %    \end{macrocode}
 %
