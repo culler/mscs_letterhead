@@ -33,7 +33,7 @@
 % 
 % \fi
 %
-% \CheckSum{1054}
+% \CheckSum{1057}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -746,16 +746,14 @@
 \vbox to 1.125in{
 \vss
 \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{p{1.75in} p{1.375in}l}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{l l l}
 Department of Mathematics, & 322 SEO Building & 312\ 996\ 3041\  p\\
-Statistics, and Computer Science & 851 S. Morgan St MC 249 & 312\ 996\ 1491\ f\\ 
+Statistics, and Computer Science & 851 S. Morgan St, MC 249 & 312\ 996\ 1491\ f\\ 
 The University & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
 of Illinois at Chicago &&\\
 \end{tabular}
-\vss
-}
-\hss}}
-}
+\vss}\hss}}\hss}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -1974,8 +1972,8 @@ Chicago, Illinois 60607-7045}
 \setlength{\TPVertModule}{0.625in}
 \newcommand{\printlogo}{
  \textblockorigin{0pt}{0pt}
- \begin{textblock}{1}(0,1)
- \pgfimage[width=2.5in]{logoleft}
+ \begin{textblock}{1}(0,2)
+ \pgfimage[width=2.5in]{mscslogo}
  \end{textblock}
 }
 %    \end{macrocode}
