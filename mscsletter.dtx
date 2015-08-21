@@ -33,7 +33,7 @@
 % 
 % \fi
 %
-% \CheckSum{1060}
+% \CheckSum{1061}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -752,16 +752,17 @@ BoldItalicFont = Theinhardt-BoldIta.otf]
 \hskip -9pt\hb@xt@\textwidth{
 \color{UICred}\urlstyle{same}\bfseries\fontsize{8pt}{8.2pt}\selectfont
 \vbox to 1.125in{
-\vss
 \renewcommand{\arraystretch}{1.1}
 \setlength{\tabcolsep}{10pt}
 {%\theinhardt
 \begin{tabular}{l l l}
-Department of Mathematics, & 851 S. Morgan St & 312\ 996\ 3041\  p\\
-Statistics, and Computer Science & 322 SEO Building, MC 249 & 312\ 996\ 1491\ f\\ 
-The University & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
-of Illinois at Chicago &&\\
+\hbox to 2.75in{Department of Mathematics, Statistics,\hfill}\hss&Phone&(312)\ 996-3041\\
+and Computer Science (MC 249)&Fax&(312)\ 996-1491\\
+322 Science and Engineering Offices&Web&\url{http://www.math.uic.edu}\\
+851 S. Morgan St.&&\\
+Chicago, IL 60607-7045&&\\
 \end{tabular}
+\vss
 }
 \vss}\hss}}\hss}
 }
@@ -1982,9 +1983,9 @@ Chicago, Illinois 60607-7045}
 \setlength{\TPHorizModule}{2.625in}
 \setlength{\TPVertModule}{0.625in}
 \newcommand{\printlogo}{
- \textblockorigin{0pt}{0pt}
+ \textblockorigin{9pt}{9pt}
  \begin{textblock}{1}(0,2)
- \pgfimage[width=2.5in]{mscslogo}
+ \pgfimage[width=126truept]{uiclogo}
  \end{textblock}
 }
 %    \end{macrocode}
