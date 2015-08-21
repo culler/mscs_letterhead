@@ -33,7 +33,7 @@
 % 
 % \fi
 %
-% \CheckSum{1063}
+% \CheckSum{1060}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -757,8 +757,8 @@ BoldItalicFont = Theinhardt-BoldIta.otf]
 \setlength{\tabcolsep}{10pt}
 {%\theinhardt
 \begin{tabular}{l l l}
-Department of Mathematics, & 322 SEO Building & 312\ 996\ 3041\  p\\
-Statistics, and Computer Science & 851 S. Morgan St, MC 249 & 312\ 996\ 1491\ f\\ 
+Department of Mathematics, & 851 S. Morgan St & 312\ 996\ 3041\  p\\
+Statistics, and Computer Science & 322 SEO Building, MC 249 & 312\ 996\ 1491\ f\\ 
 The University & Chicago, IL 60607-7045 & \url{http://www.math.uic.edu}\\
 of Illinois at Chicago &&\\
 \end{tabular}
@@ -774,11 +774,12 @@ of Illinois at Chicago &&\\
 %    because of twoside option}
 % \changes{v1.2s}{1995/05/25}{replace \cs{rmfamily} with
 %    \cs{normalfont} (PR 1578)}
+% \changes{MC}{2015/08/21}{Set the page number at the left margin for the new style}
 %    \begin{macrocode}
 \def\ps@plain{%
       \let\@oddhead\@empty
-      \def\@oddfoot{\normalfont\hfil\thepage\hfil}%
-      \def\@evenfoot{\normalfont\hfil\thepage\hfil}}
+      \def\@oddfoot{\normalfont\thepage\hfil}%
+      \def\@evenfoot{\normalfont\thepage\hfil}}
 %    \end{macrocode}
 % \end{macro}
 %
