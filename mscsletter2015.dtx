@@ -33,7 +33,7 @@
 % 
 % \fi
 %
-% \CheckSum{1061}
+% \CheckSum{1073}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -365,6 +365,9 @@
 \usepackage{pgf}
 \usepackage{url}
 \usepackage[absolute]{textpos}
+%    If we are using xetex we assume that the Theinhardt font is available.
+\usepackage{ifxetex}
+\ifxetex
 \usepackage{mathspec}
 \setmainfont[
 BoldFont = Theinhardt-Bold.otf,
@@ -373,6 +376,15 @@ BoldItalicFont = Theinhardt-BoldIta.otf]
 {Theinhardt-Regular.otf}
 \setmathsfont(Digits,Latin){Theinhardt-Regular.otf}
 \setmathrm{Theinhardt-Regular.otf}
+%    Otherwise we substitute Helvetica.
+\else
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{t1enc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
+\usepackage{sfmath}
+\fi
 %    \end{macrocode}
 %
 % \section{Document Layout}
