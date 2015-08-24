@@ -1,0 +1,50 @@
+\documentclass[letterpaper]{mscsletter2015}
+\linespread{1.1}
+<dtml-if labels>
+\makelabels
+</dtml-if>
+% Your name and optional title, below the signature.  End lines with \\
+\signature{<dtml-if signature1><dtml-var signature1></dtml-if><dtml-if signature2>\\
+<dtml-var signature2></dtml-if>
+}
+% Signature image
+<dtml-if image_file>
+\signatureimage{<dtml-var image_filename>}
+<dtml-else>
+</dtml-if>
+
+\begin{document}
+\begin{letter}{
+<dtml-if recipient><dtml-var recipient>\\
+</dtml-if>
+<dtml-if address1><dtml-var address1>\\
+</dtml-if>
+<dtml-if address2><dtml-var address2>\\
+</dtml-if>
+<dtml-if address3><dtml-var address3>\\
+</dtml-if>
+<dtml-if address4><dtml-var address4>\\
+</dtml-if>
+<dtml-if address5><dtml-var address5>\\
+</dtml-if>
+}
+
+<dtml-if opening>\opening{<dtml-var opening>}
+<dtml-else>\opening{\ }
+</dtml-if>
+
+<dtml-if body>
+<dtml-if uselatex><dtml-texvar body format_maps="html_unquote">
+<dtml-else><dtml-texvar body tex_quote>
+</dtml-if>
+</dtml-if>
+
+<dtml-if closing>\closing{<dtml-var closing>}</dtml-if>
+
+<dtml-if ps>\ps{PS. <dtml-var ps>}</dtml-if>
+<dtml-if pps>\ps{PPS. <dtml-var pps>}</dtml-if>
+<dtml-if cc>\cc{<dtml-var cc>}</dtml-if>    
+<dtml-if encl>\encl{<dtml-var encl>}</dtml-if>
+
+\end{letter}
+\end{document}
